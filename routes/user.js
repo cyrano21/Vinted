@@ -21,7 +21,7 @@ router.post("/user/signup", async (req, res) => {
       console.log("isUserExist==>", isUserExist);
 
       if (isUserExist) {
-        return res.status(400).json("This elail is not available");
+        return res.status(400).json("This email is not available");
       } else {
         const salt = uid2(35);
         const hash = SHA256(password + salt).toString(encbase64);
